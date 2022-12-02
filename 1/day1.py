@@ -8,12 +8,19 @@ def sum_calories(lst):
     return total_calories
 
 def main(): 
-    input = read_file('input.txt').strip().replace("\n", 't').split('tt')
-    input = [element.split('t') for element in input]
+    input = read_file('input.txt').strip().split('\n\n')
+    input = [element.split('\n') for element in input]
     input = [list(map(int, elf)) for elf in input]
     
+    #p1
     most = max(sum_calories(input))
     print(most)
+
+    #p2
+    calories = sum_calories(input)
+    calories.sort(reverse=True)  
+    sum_top_three = calories[0] + calories[1] + calories[2]
+    print(sum_top_three)
     
 if __name__ == '__main__':
     main()
