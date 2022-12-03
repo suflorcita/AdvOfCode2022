@@ -17,22 +17,6 @@ def letter_in_three_strings(string1, string2, string3):
             return letter
     return None
 
-def divide_into_groups(n, lst): 
-    groups = []
-    group = [lst[0]]
-
-    for pos, word in enumerate(lst): 
-        if pos % n != 0: 
-            group.append(word)
-        elif pos != 0: 
-            groups.append(group)
-            group = []
-            group.append(word)
-    
-    groups.append(group)
-
-    return groups
-
 def priority(character): 
     #priority
     lowercase = {v:k for k,v in enumerate(string.ascii_lowercase, start=1)}
@@ -61,8 +45,8 @@ def main():
     #p2
 
     # divide into groups
-    groups = divide_into_groups(3, input)
-
+    groups = [[input[i], input[i+1], input[i+2]] for i in range(0, len(input), 3)]
+    
     for group in groups: 
         str1, str2, str3 = group[0], group[1], group[2]
         character = letter_in_three_strings(str1, str2, str3)
