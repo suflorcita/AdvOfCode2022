@@ -1,6 +1,6 @@
 def read_file(filename):
     with open(filename, 'r') as f: 
-        txt = f.read()
+        txt = f.read().strip()
     return txt
 
 def sum_calories(lst): 
@@ -8,7 +8,7 @@ def sum_calories(lst):
     return total_calories
 
 def main(): 
-    input = read_file('input.txt').strip().split('\n\n')
+    input = read_file('input.txt').split('\n\n')
     input = [element.split('\n') for element in input]
     input = [list(map(int, elf)) for elf in input]
     
