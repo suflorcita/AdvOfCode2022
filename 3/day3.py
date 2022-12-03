@@ -6,8 +6,8 @@ def read_file(filename):
     return txt
 
 def letter_in_string(string1, string2):
-    for letter in string2: 
-        if letter in string1: 
+    for letter in string1: 
+        if letter in string2: 
             return letter
     return None
 
