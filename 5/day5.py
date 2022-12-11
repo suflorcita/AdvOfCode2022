@@ -43,7 +43,7 @@ def main():
         value2 = re.findall(pattern2, line)
         if value2: movements.append(parse_movement(line))
 
-    # change mode     
+    # change mode  mode0 : p1 mode1: p2
     for movement in movements: 
         change_positions(movement, positions, mode=1)
     
